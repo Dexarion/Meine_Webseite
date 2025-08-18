@@ -1,167 +1,205 @@
-  :root{
-      --bg:hsl(110, 58%, 76%);
-      --card:#222;
-      --heading:#000000;
-      --text:#fff;
-      --muted:#d1d1d1;
-      --radius:14px;
-      --gap:14px;
-    }
+  :root {
+    --bg: hsl(150, 47%, 7%);
+    --nav-verlauf: linear-gradient(180deg, hsla(129, 100%, 50%, 1) 0%, hsla(151, 45%, 10%, 0) 100%);
+    --card: #222;
+    --heading: #293532;
+    --text: #fff;
+    --muted: #d1d1d1;
+    --radius: 14px;
+    --gap: 14px;
+  }
 
-    *{ box-sizing:border-box; }
+  * {
+    box-sizing: border-box;
+  }
 
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      line-height:1.6;
-    }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    line-height: 1.6;
+  }
 
-    /* Wrapper begrenzt die Breite und zentriert alles */
-    .wrapper{
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 24px;
-    }
+  /* Wrapper begrenzt die Breite und zentriert alles */
+  .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+  }
 
-    /* Überschrift */
-    h1{
-      margin: 24px 0 10px;
-      text-align:center;
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      letter-spacing:.2px;
-      color:var(--heading);
-    }
+  /* Überschrift */
+  h1 {
+    margin: 24px 0 10px;
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    letter-spacing: .2px;
+    color: var(--heading);
+  }
 
-    .lead{
-      text-align:center;
-      color:var(--muted);
-      margin: 0 0 22px;
-      font-size: clamp(1rem, 2.5vw, 1.1rem);
-    }
+  .lead {
+    text-align: center;
+    color: var(--muted);
+    margin: 0 0 22px;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+  }
 
-    /* Zwei Kästen nebeneinander, mittig */
-    .container{
-      display:flex;
-      justify-content:center;
-      gap: var(--gap);
-      flex-wrap: wrap;           /* auf kleinen Screens umbrechen */
-      margin: 10px 0 22px;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
+  /* Zwei Kästen nebeneinander, mittig */
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+    flex-wrap: wrap;
+    /* auf kleinen Screens umbrechen */
+    margin: 10px 0 22px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-    .card{
-      background: var(--card);
-      padding: 18px;
-      border-radius: var(--radius);
-      width: 260px;              /* gleiche Breite */
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
-      transition: transform .12s ease, box-shadow .2s ease;
-    }
-    .card:hover{ transform: translateY(-2px); box-shadow:0 18px 38px rgba(0,0,0,.45); }
+  .card {
+    background: var(--card);
+    padding: 18px;
+    border-radius: var(--radius);
+    width: 260px;
+    /* gleiche Breite */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+    transition: transform .12s ease, box-shadow .2s ease;
+  }
 
-    .card h2{ margin: 4px 0 8px; font-size:1.2rem; }
-    .card p{ margin: 0; }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, .45);
+  }
 
-    /* Fließtext-Blöcke */
-    .section{
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .section-content{
-        background: var(--card);
-        border-radius: var(--radius);
-        box-shadow: 0 12px 30px rgba(0,0,0,.35);
-        padding: 20px 40px;
-        display: flex;
-        flex-direction: column;
-    }
+  .card h2 {
+    margin: 4px 0 8px;
+    font-size: 1.2rem;
+  }
 
-    /* Abstände für Absätze konsistent */
-    p{ margin: 8px 0; }
+  .card p {
+    margin: 0;
+  }
 
-    .facts{
-      background: var(--card);
-      padding: 18px;
-      border-radius: var(--radius);
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
-      margin-top: 16px;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .Ziele{
-      background: var(--card);
-      padding: 18px;
-      border-radius: var(--radius);
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
-      margin-top: 16px;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .landing{
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background: none;
-      box-shadow: none;
-    }
-    a.a-button{
-      padding: 15px 40px 15px 40px;
-      background: none;
-      border: 1px solid var(--heading);
-      border-radius: 5px;
-      box-shadow: none;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-top: 20px;
-      transition: background-color .25s ease, color .25s ease;
-      color: var(--heading);
-      text-decoration: none;
-    }
-    a:hover {background:  var(--heading) ;color: var(--bg);transform: translateY(-2px); box-shadow:0 18px 38px rgba(0,0,0,.45);}
+  /* Fließtext-Blöcke */
+  .section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-    a{
-      color: var(--heading);
-      text-decoration: none;
-      padding: 10px 20px 10px 20px;
-    }
-    ul{
-      list-style: none;
-      display: flex;
-      flex-direction: row;
+  .section-content {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+  }
 
-    }
-    nav{
-      background: rgb(5, 197, 62);
-      position: fixed;         /* bleibt oben kleben */
-      top: 0;                  /* direkt am oberen Rand */
-      left: 0;
-      width: 100%;             /* volle Breite */
-      display: flex;
-      justify-content: center; /* in die Mitte */
-      margin: 0;
-      padding: 10px;
-      z-index: 1000;           /* immer oben */
-      
-    }
+  /* Abstände für Absätze konsistent */
+  p {
+    margin: 8px 0;
+  }
+
+  .facts {
+    background: var(--card);
+    padding: 18px;
+    border-radius: var(--radius);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+    margin-top: 16px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .Ziele {
+    background: var(--card);
+    padding: 18px;
+    border-radius: var(--radius);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+    margin-top: 16px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .landing {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: none;
+    box-shadow: none;
+  }
+
+  a.a-button {
+    padding: 15px 40px 15px 40px;
+    background: none;
+    border: 1px solid var(--heading);
+    border-radius: 5px;
+    box-shadow: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    transition: background-color .25s ease, color .25s ease;
+    color: var(--heading);
+    text-decoration: none;
+  }
+
+  a:hover {
+    background: var(--heading);
+    color: var(--bg);
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, .45);
+  }
+
+  a {
+    color: var(--heading);
+    text-decoration: none;
+    padding: 10px 20px 10px 20px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    /* background: rgb(5, 197, 62); */
+    background: var(--nav-verlauf);
+    position: fixed;
+    /* bleibt oben kleben */
+    top: 0;
+    /* direkt am oberen Rand */
+    left: 0;
+    width: 100%;
+    /* volle Breite */
+    display: flex;
+    justify-content: center;
+    /* in die Mitte */
+    margin: 0;
+    padding: 25px 0 40px 0;
+    z-index: 1000;
+    /* immer oben */
+
+    font-weight: 1000;
+    font-size: 1.25rem;
+
+  }
