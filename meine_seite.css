@@ -250,7 +250,7 @@
     padding-left: 2rem;
     padding-right: 2rem;
 
-    font-weight: 1000;
+    font-weight: bold;
   }
 
   a {
@@ -297,5 +297,6 @@
     transition: background-color .25s ease, color .25s ease, padding-left .25s ease, padding-right .25s ease;
     font-size: 1.2rem;
     text-transform: uppercase;
+    font-weight: normal;
 
   }
