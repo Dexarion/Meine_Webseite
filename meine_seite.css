@@ -7,6 +7,7 @@
     --muted: #d1d1d1;
     --radius: 14px;
     --gap: 14px;
+    --seite:none;
   }
 
   * {
@@ -171,6 +172,7 @@
     color: var(--heading);
     text-decoration: none;
     padding: 10px 20px 10px 20px;
+    border-radius: var(--radius);
   }
 
   ul {
