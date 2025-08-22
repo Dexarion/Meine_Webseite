@@ -1,41 +1,66 @@
+  /*Ubuntu*/
   @font-face {
     font-family: "Ubuntu-Bold";
     src: url(./fonts/Ubuntu/Ubuntu-Bold.ttf) format("truetype");
   }
 
   @font-face {
-    font-family: "Raleway-Light";
+    font-family: "Ubuntu-BoldItalic";
+    src: url(./fonts/Ubuntu/Ubuntu-BoldItalic.ttf) format("truetype");
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  /*Raleway*/
+  @font-face {
+    font-family: "Raleway";
     src: url(./fonts/Raleway/Raleway-Light.ttf) format("truetype");
     font-weight: 300;
   }
 
   @font-face {
-    font-family: "Raleway-Regular";
+    font-family: "Raleway";
     src: url(./fonts/Raleway/Raleway-Regular.ttf) format("truetype");
     font-weight: normal;
   }
 
   @font-face {
-    font-family: "Raleway-Semibold";
+    font-family: "Raleway";
     src: url(./fonts/Raleway/Raleway-Semibold.ttf) format("truetype");
     font-weight: 600;
   }
 
   @font-face {
-    font-family: "Raleway-Bold";
+    font-family: "Raleway";
+    src: url(./fonts/Raleway/Raleway-SemiBoldItalic.ttf) format("truetype");
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Raleway";
     src: url(./fonts/Raleway/Raleway-Bold.ttf) format("truetype");
     font-weight: bold;
   }
 
   @font-face {
-    font-family: "Raleway-Black";
+    font-family: "Raleway";
+    src: url(./fonts/Raleway/Raleway-BoldItalic.ttf) format("truetype");
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Raleway";
     src: url(./fonts/Raleway/Raleway-Black.ttf) format("truetype");
     font-weight: 900;
   }
 
+  
+
   :root {
-    --bg: hsl(152, 35%, 16%);
-    --nav-verlauf: linear-gradient(180deg, hsla(129, 100%, 50%, 1) 0%, hsla(151, 45%, 10%, 0) 100%);
+    --bg: hsl(152, 62%, 15%);
+    --nav: hsla(129, 100%, 50%, 1);
     --card: #222;
     --positive: #e6f5e2;
     --heading: #1b1f1a;
@@ -47,7 +72,7 @@
 
     /* Schriftarten */
     --font-heading: "Ubuntu-Bold";
-    --font-text: "Raleway-Semibold";
+    --font-text: "Raleway";
   }
 
   * {
@@ -183,9 +208,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     background: none;
     box-shadow: none;
+
+    gap: 1rem;
+  }
+
+  #hallo {
+    color: hsla(129, 100%, 50%, 1);
+    font-family: "Ubuntu";
+    font-weight: bold;
   }
 
   a.a-button {
@@ -198,7 +231,7 @@
     letter-spacing: 2px;
     margin-top: 20px;
     transition: background-color .25s ease, color .25s ease;
-    color: var(--negative);
+    color: var(--positive);
     text-decoration: none;
   }
 
@@ -214,7 +247,7 @@
   }
 
   a {
-    color: var(--heading);
+    color: var(--positive);
     text-decoration: none;
     padding: 10px 20px 10px 20px;
     border-radius: var(--radius);
@@ -230,7 +263,10 @@
 
   nav {
     /* background: rgb(5, 197, 62); */
-    background: var(--nav-verlauf);
+    /* background: linear-gradient(180deg, var(--nav) 0%, hsla(151, 45%, 10%, .1) 90%); */
+    background: linear-gradient(180deg, color-mix(in srgb, var(--card) 75%, transparent) 0%, color-mix(in srgb, var(--card) 0%, transparent) 100%);
+    backdrop-filter: blur(2.5px);
+
     position: fixed;
     /* bleibt oben kleben */
     top: 0;
@@ -252,5 +288,7 @@
 
   nav a {
     transition: background-color .25s ease, color .25s ease, padding-left .25s ease, padding-right .25s ease;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 
   }
