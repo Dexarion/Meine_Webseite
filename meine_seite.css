@@ -56,7 +56,7 @@
     font-weight: 900;
   }
 
-  
+
 
   :root {
     --bg: hsl(152, 62%, 15%);
@@ -73,6 +73,9 @@
     /* Schriftarten */
     --font-heading: "Ubuntu-Bold";
     --font-text: "Raleway";
+
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
   }
 
   * {
@@ -85,6 +88,8 @@
     color: var(--text);
     font-family: var(--font-text);
     line-height: 1.6;
+
+
   }
 
   /* Wrapper begrenzt die Breite und zentriert alles */
@@ -158,6 +163,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    scroll-snap-align: center;
   }
 
   .section-content {
