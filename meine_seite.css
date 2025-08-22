@@ -67,7 +67,7 @@
     --text: #fff;
     --muted: #d1d1d1;
     --radius: 14px;
-    --gap: 14px;
+    --gap: 1.5rem;
     --seite: none;
 
     /* Schriftarten */
@@ -94,7 +94,7 @@
 
   /* Wrapper begrenzt die Breite und zentriert alles */
   .wrapper {
-    max-width: 900px;
+    max-width: 80dvw;
     margin: 0 auto;
   }
 
@@ -131,12 +131,24 @@
     flex-direction: column;
   }
 
+  .card-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+    flex-wrap: wrap;
+
+    width: 100%;
+  }
+
   .card {
+    width: 75%;
+
+    display: flex;
+    flex-direction: column;
+
     background: var(--card);
-    padding: 18px;
+    padding: 1.5rem 3rem 2rem 3rem;
     border-radius: var(--radius);
-    width: 260px;
-    /* gleiche Breite */
     box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
     transition: transform .12s ease, box-shadow .2s ease;
   }
@@ -298,5 +310,56 @@
     font-size: 1.2rem;
     text-transform: uppercase;
     font-weight: normal;
+    text-align: center;
+  }
 
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: .3rem;
+    align-items: start;
+  }
+
+  .burger:hover {
+    cursor:pointer;
+    animation: burger-wiggle .5s ease-in-out forwards infinite;
+  }
+
+  .burger-line {
+    width: 1.75rem;
+    height: .25rem;
+    background-color: var(--positive);
+    border-radius: .25rem;
+
+    transition: width .25s ease;
+  }
+
+  @keyframes burger-wiggle {
+    0% {
+      transform: rotate(1deg);
+    }
+    50% {
+      transform: rotate(-1deg);
+    }
+    100% {
+      transform: rotate(1deg);
+    }
+  }
+
+  @media (max-width: 1100px) {
+    
+    nav {
+      display: none;
+    }
+
+    .burger {
+      position: fixed;
+      top: 2rem;
+      left: 2rem;
+      display: flex;
+    }
+
+    .burger-content {
+      display: flex;
+    }
   }
