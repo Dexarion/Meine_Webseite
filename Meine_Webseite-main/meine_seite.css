@@ -1,0 +1,410 @@
+  /*Ubuntu*/
+  @font-face {
+    font-family: "Ubuntu-Bold";
+    src: url(./fonts/Ubuntu/Ubuntu-Bold.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "Ubuntu-BoldItalic";
+    src: url(./fonts/Ubuntu/Ubuntu-BoldItalic.ttf) format("truetype");
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  /*Raleway*/
+  @font-face {
+    font-family: "Raleway";
+    src: url(./fonts/Raleway/Raleway-Light.ttf) format("truetype");
+    font-weight: 300;
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url(./fonts/Raleway/Raleway-Regular.ttf) format("truetype");
+    font-weight: normal;
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url(./fonts/Raleway/Raleway-Semibold.ttf) format("truetype");
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url(./fonts/Raleway/Raleway-SemiBoldItalic.ttf) format("truetype");
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url(./fonts/Raleway/Raleway-Bold.ttf) format("truetype");
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url(./fonts/Raleway/Raleway-BoldItalic.ttf) format("truetype");
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "Raleway";
+    src: url(./fonts/Raleway/Raleway-Black.ttf) format("truetype");
+    font-weight: 900;
+  }
+
+
+
+  :root {
+    --bg: hsl(152, 62%, 15%);
+    --nav: hsla(129, 100%, 50%, 1);
+    --card: #222;
+    --positive: #e6f5e2;
+    --heading: #1b1f1a;
+    --text: #fff;
+    --muted: #d1d1d1;
+    --radius: 14px;
+    --gap: 1.5rem;
+    --seite: none;
+
+    /* Schriftarten */
+    --font-heading: "Ubuntu-Bold";
+    --font-text: "Raleway";
+
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-text);
+    line-height: 1.6;
+
+
+  }
+
+  /* Wrapper begrenzt die Breite und zentriert alles */
+  .wrapper {
+    max-width: 80dvw;
+    margin: 0 auto;
+  }
+
+  /* Überschrift */
+  h1 {
+    font-family: var(--font-heading);
+    margin: 24px 0 10px;
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    letter-spacing: .2px;
+    color: var(--positive);
+  }
+
+  .lead {
+    text-align: center;
+    color: var(--muted);
+    margin: 0 0 22px;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+  }
+
+  /* Zwei Kästen nebeneinander, mittig */
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+    flex-wrap: wrap;
+    /* auf kleinen Screens umbrechen */
+    margin: 10px 0 22px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .card-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+    flex-wrap: wrap;
+
+    width: 100%;
+  }
+
+  .card {
+    width: 75%;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--card);
+    padding: 1.5rem 3rem 2rem 3rem;
+    border-radius: var(--radius);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+    transition: transform .12s ease, box-shadow .2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, .45);
+  }
+
+  .card h2 {
+    margin: 4px 0 8px;
+    font-size: 1.2rem;
+  }
+
+  .card p {
+    margin: 0;
+  }
+
+  /* Fließtext-Blöcke */
+  .section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    scroll-snap-align: center;
+  }
+
+  .section-content {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+.section-content:hover {
+  transform: translateY(-5px); /* hebt die Karte leicht an */
+  box-shadow: 0 16px 24px rgba(0,0,0,0.3); /* Schatten verstärken */
+}
+
+/* 1) Mobile: Höhe flexibel, Snap aus, mehr Innenabstand */
+@media (max-width: 768px) {
+  .section {
+    height: auto;              /* statt 100vh */
+    min-height: auto;          /* falls gesetzt */
+    padding: 24px 16px;        /* Luft am Rand */
+    scroll-snap-align: none;   /* Snap kann auf Mobile nerven */
+  }
+
+  .section-content {
+    width: 100%;
+    max-width: 680px;          /* verhindert „zu breit“ */
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* sanfte Animation */
+  }
+}
+ .section-content:hover {
+  transform: translateY(-5px); /* hebt die Karte leicht an */
+  box-shadow: 0 16px 24px rgba(0,0,0,0.3); /* Schatten verstärken */
+}
+
+/* 2) Moderne Viewport-Einheit (optional, wenn du 100vh behalten willst) */
+@media (min-width: 769px) {
+  .section {
+    min-height: 100svh;        /* besser als 100vh wegen Mobile-URL-Bar */
+    height: auto;
+  }
+}
+
+/* 3) Hover auf Touch-Geräten deaktivieren */
+@media (hover: none) {
+  .section-content:hover {
+    transform: none;
+    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  }
+}
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr; /* eine Spalte auf Mobile */
+  }
+}
+  /* Abstände für Absätze konsistent */
+  p {
+    margin: 8px 0;
+  }
+
+  .facts {
+    background: var(--card);
+    padding: 18px;
+    border-radius: var(--radius);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+    margin-top: 16px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .Ziele {
+    background: var(--card);
+    padding: 18px;
+    border-radius: var(--radius);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+    margin-top: 16px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .landing {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+
+    gap: 1rem;
+  }
+
+  #hallo {
+    color: hsla(129, 100%, 50%, 1);
+    font-family: "Ubuntu";
+    font-weight: bold;
+  }
+
+  a.a-button {
+    padding: 15px 40px 15px 40px;
+    background: none;
+    border: 1px solid var(--heading);
+    border-radius: 5px;
+    box-shadow: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    transition: background-color .25s ease, color .25s ease;
+    color: var(--positive);
+    text-decoration: none;
+  }
+
+  a:hover {
+    background: var(--heading);
+    color: var(--negative);
+    transform: translateY(-2px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, .45);
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    font-weight: bold;
+  }
+
+  a {
+    color: var(--positive);
+    text-decoration: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: var(--radius);
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    /* background: rgb(5, 197, 62); */
+    /* background: linear-gradient(180deg, var(--nav) 0%, hsla(151, 45%, 10%, .1) 90%); */
+    background: linear-gradient(180deg, color-mix(in srgb, var(--card) 75%, transparent) 0%, color-mix(in srgb, var(--card) 0%, transparent) 100%);
+    backdrop-filter: blur(2.5px);
+
+    position: fixed;
+    /* bleibt oben kleben */
+    top: 0;
+    /* direkt am oberen Rand */
+    left: 0;
+    width: 100%;
+    /* volle Breite */
+    display: flex;
+    justify-content: center;
+    /* in die Mitte */
+    margin: 0;
+    padding: 25px 0 40px 0;
+    z-index: 1000;
+    /* immer oben */
+
+    font-weight: 600;
+    font-size: 1.25rem;
+  }
+
+  nav a {
+    transition: background-color .25s ease, color .25s ease, padding-left .25s ease, padding-right .25s ease;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: .3rem;
+    align-items: start;
+  }
+
+  .burger:hover {
+    cursor:pointer;
+    animation: burger-wiggle .5s ease-in-out forwards infinite;
+  }
+
+  .burger-line {
+    width: 1.75rem;
+    height: .25rem;
+    background-color: var(--positive);
+    border-radius: .25rem;
+
+    transition: width .25s ease;
+  }
+
+  @keyframes burger-wiggle {
+    0% {
+      transform: rotate(1deg);
+    }
+    50% {
+      transform: rotate(-1deg);
+    }
+    100% {
+      transform: rotate(1deg);
+    }
+  }
+
+  @media (max-width: 1100px) {
+    
+    nav {
+      display: none;
+    }
+
+    .burger {
+      position: fixed;
+      top: 2rem;
+      left: 2rem;
+      display: flex;
+    }
+
+    .burger-content {
+      display: flex;
+    }
+  }
